@@ -46,3 +46,4 @@ C:\programing\sql\project\C#\WinFormsApp1\WinFormsApp1\obj\Debug\net7.0-windows\
 C:\programing\sql\project\C#\WinFormsApp1\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.pdb
 C:\programing\sql\project\C#\WinFormsApp1\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.genruntimeconfig.cache
 C:\programing\sql\project\C#\WinFormsApp1\WinFormsApp1\obj\Debug\net7.0-windows\ref\WinFormsApp1.dll
+C:\programing\sql\project\C#\WinFormsApp1\WinFormsApp1\obj\Debug\net7.0-windows\WinFormsApp1.Form2.resources

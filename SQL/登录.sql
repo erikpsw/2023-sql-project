@@ -12,7 +12,7 @@
 --         IF PATINDEX('[A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]', @Password) = 1
 --         BEGIN
 --             IF EXISTS(select * from Users where UserID=@UserID and [Password]=@Password)
---                 SELECT 1 as res
+--                 SELECT 1 as res,Fullname,Telephone,Email FROM Users WHERE UserID=@UserID
 --             ELSE 
 --                 SELECT 0 as res
 --         END
@@ -30,11 +30,11 @@
 -- END;
 
 
--- BEGIN TRY
---     DECLARE @LoginRes INT
---     EXEC @LoginRes = login @UserID='A123456789', @Password='P123456789'
---     PRINT '登录结果: ' + CAST(@LoginRes AS VARCHAR)
--- END TRY
--- BEGIN CATCH
---     PRINT '错误发生: ' + ERROR_MESSAGE()
--- END CATCH
+BEGIN TRY
+    DECLARE @LoginRes INT
+    EXEC @LoginRes = login @UserID='A123456789', @Password='P123456789'
+    PRINT '登录结果: ' + CAST(@LoginRes AS VARCHAR)
+END TRY
+BEGIN CATCH
+    PRINT '错误发生: ' + ERROR_MESSAGE()
+END CATCH

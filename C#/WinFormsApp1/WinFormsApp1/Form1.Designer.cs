@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             this.SuspendLayout();
             // 
             // button1
@@ -52,6 +52,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(232, 30);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -78,6 +79,11 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "密码";
             // 
+            // sqlCommand1
+            // 
+            this.sqlCommand1.CommandTimeout = 30;
+            this.sqlCommand1.EnableOptimizedParameterBinding = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -90,6 +96,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +109,6 @@
         private TextBox textBox2;
         private Label label1;
         private Label label2;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }

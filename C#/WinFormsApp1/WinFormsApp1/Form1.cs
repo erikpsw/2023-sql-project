@@ -11,7 +11,7 @@ namespace WinFormsApp1
     {
 
         String conStr = @"Server=.\TONGJI;
-            Database=account; Integrated Security=true;";
+            Database=account;integrated security=true";
         SqlConnection conn;
         public Form1()
         {
@@ -39,13 +39,26 @@ namespace WinFormsApp1
 
             SqlCommand cmd = new SqlCommand(sql, conn);
             int res;
+            SqlDataReader data; 
             try
             {
-                res = (Int32)cmd.ExecuteScalar();
-                Debug.WriteLine(res);
+                data = cmd.ExecuteReader();
+                data.Read();
+                Debug.WriteLine(data[1]);
+                res = (int)data[0];
                 if(res == 1)
                 {
                     MessageBox.Show("登录成功");
+
+                    string name1 = data[1]?.ToString();
+                    if (name1 != null)
+                    {
+                        Form2 f2 = new Form2(name1, userid);
+                        // 其他逻辑
+                        conn.Close();
+                        this.Hide(); // 隐藏当前窗体
+                        f2.ShowDialog();
+                    }
                 }
                 else
                 {
@@ -60,6 +73,17 @@ namespace WinFormsApp1
 
             // 处理返回值
             //Debug.WriteLine("返回值: " + returnValue);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = "A123456789";
+            textBox2.Text = "P123456789";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
