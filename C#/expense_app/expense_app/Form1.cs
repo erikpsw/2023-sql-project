@@ -15,7 +15,7 @@ namespace expense_app
     
     public partial class Form1 : Form
     {
-        String conStr = @"Server=.\TONGJI;
+        String conStr = @"Server=.\SQLEXPRESS;
             Database=account;integrated security=true";
         SqlConnection conn;
         public Form1()
