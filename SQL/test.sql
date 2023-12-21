@@ -1,0 +1,1 @@
+select projectID,projectName from Projects

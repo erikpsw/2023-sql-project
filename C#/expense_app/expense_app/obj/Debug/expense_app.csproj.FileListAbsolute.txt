@@ -1,10 +1,14 @@
 C:\programing\sql\project\C#\expense_app\expense_app\bin\Debug\expense_app.exe.config
 C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.csprojResolveAssemblyReference.cache
-C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.Form1.resources
-C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.Form2.resources
 C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.Properties.Resources.resources
 C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.csproj.GenerateResource.Cache
 C:\programing\sql\project\C#\expense_app\expense_app\bin\Debug\expense_app.exe
 C:\programing\sql\project\C#\expense_app\expense_app\bin\Debug\expense_app.pdb
 C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.exe
 C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.pdb
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.报销管理.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.项目管理.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.登陆.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.管理总页面.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.报销总页面.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.新增报销.resources
