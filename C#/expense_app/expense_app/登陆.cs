@@ -36,8 +36,8 @@ namespace expense_app
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            textBox1.Text = "D555555555";
-            textBox2.Text = "P555555555";
+            textBox1.Text = "A123456789";
+            textBox2.Text = "P123456789";
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -14,12 +14,14 @@ namespace expense_app
 {
     public partial class 项目管理 : Form
     {
+        String userID;
         String conStr = @"Server=.\SQLEXPRESS;
             Database=account;integrated security=true";
         SqlConnection conn;
         List<string> ID_list = new List<string>();
-        public 项目管理()
+        public 项目管理(String UserID)
         {
+            userID = UserID;
             InitializeComponent();
             conn = new SqlConnection(conStr); //创建连接
             try
@@ -30,24 +32,31 @@ namespace expense_app
             {
                 MessageBox.Show(ex.ToString(), "失败");
             }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void 项目管理_Load(object sender, EventArgs e)
         {
             String sql1 = "select projectID,projectName from Projects";
             SqlCommand cmd = new SqlCommand(sql1, conn);
+            conn.Open();
             SqlDataReader rd = cmd.ExecuteReader();
-            
+
             while (rd.Read())
             {
                 ID_list.Add(rd[0].ToString());
                 comboBox1.Items.Add(rd[1]);
             }
             rd.Close();
+            conn.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            conn.Open();
             int index = comboBox1.SelectedIndex;
             String sql1 = "EXEC get_project " + ID_list[index];
             SqlCommand cmd = new SqlCommand(sql1, conn);
@@ -65,6 +74,121 @@ namespace expense_app
             // 输出表的列名
             dataGridView1.DataSource = table;
             rd.Close();
-        }   
+
+            string sql2 = "select ExpenseID from Expenses where ProjectID=@ProjectID";
+            SqlCommand cmd1 = new SqlCommand(sql2, conn);
+            cmd1.Parameters.Add("@ProjectID", SqlDbType.Int);
+            cmd1.Parameters["@ProjectID"].Value = ID_list[index];
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            SqlDataReader rdr = cmd1.ExecuteReader();
+            while (rdr.Read())
+            {
+                comboBox2.Items.Add(rdr[0]);
+                comboBox3.Items.Add(rdr[0]);
+            }
+            rdr.Close();
+            conn.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string sql = @"EXEC UpdateExpenseStatus @ExpenseID";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            DateTime currentTime = DateTime.Now;
+            cmd.Parameters.Add("@ExpenseID", SqlDbType.Int);
+
+            cmd.Parameters["@ExpenseID"].Value = comboBox2.Text;
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("通过审批");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "失败");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string sql = @"EXEC UpdateExpenseStatus";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            DateTime currentTime = DateTime.Now;
+            cmd.Parameters.Add("@ExpenseID", SqlDbType.Int);
+            cmd.Parameters.Add("@NewStatus", SqlDbType.VarChar, 50);
+            cmd.Parameters.Add("@ApproverID", SqlDbType.VarChar, 50);
+            cmd.Parameters.Add("@ApprovalTime", SqlDbType.Date);
+            cmd.Parameters["@ExpenseID"].Value = comboBox2.Text;
+            cmd.Parameters["@NewStatus"].Value = "Disapproved";
+            cmd.Parameters["@ApproverID"].Value = userID;
+            cmd.Parameters["@ApprovalTime"].Value = currentTime.Date.ToString();
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("审批不通过");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "失败");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        
+        {
+            conn.Open();
+            int index = comboBox1.SelectedIndex;
+            String sql1 = "EXEC get_project " + ID_list[index];
+            SqlCommand cmd = new SqlCommand(sql1, conn);
+            SqlDataReader rd = cmd.ExecuteReader();
+
+            rd.Read();
+            textBox1.Text = rd[1].ToString();
+            textBox2.Text = rd[0].ToString();
+            rd.Close();
+            sql1 = "EXEC get_Project_expense " + ID_list[index]; ;
+            SqlDataAdapter adapter = new SqlDataAdapter(sql1, conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            DataTable table = ds.Tables[0];
+            // 输出表的列名
+            dataGridView1.DataSource = table;
+            rd.Close();
+            conn.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string sql = @"Delete from Expenses where ExpenseID=@ExpenseID";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add("@ExpenseID", SqlDbType.Int);
+            cmd.Parameters["@ExpenseID"].Value = comboBox2.Text;
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("删除成功");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "失败");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        
+        }
     }
 }

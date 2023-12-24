@@ -69,8 +69,14 @@ namespace expense_app
 
         private void 项目管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f3 = new 项目管理();
+            conn.Close();
+            Form f3 = new 项目管理(userID);
             f3.ShowDialog();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
         
     }
