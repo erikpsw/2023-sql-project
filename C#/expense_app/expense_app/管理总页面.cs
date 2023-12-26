@@ -15,7 +15,7 @@ namespace expense_app
     public partial class 管理总页面 : Form
     {
         String name, userID;
-        String conStr = @"Server=.\SQLEXPRESS;
+        String conStr = @"Server=.\sqlexpress;
             Database=account;integrated security=true";
         SqlConnection conn;
         public 管理总页面(String name1, String UserID)
@@ -74,9 +74,24 @@ namespace expense_app
             f3.ShowDialog();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void 根据项目分类ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            conn.Close();
+            Form f4 = new 项目数据分析();
+            f4.ShowDialog();
+        }
+
+        private void 根据费用种类ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            conn.Close();
+            Form f5 = new 费用数据分析();
+            f5.ShowDialog();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
         
     }

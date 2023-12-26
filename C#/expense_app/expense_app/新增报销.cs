@@ -9,18 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.IO;
 
 namespace expense_app
 {
     public partial class 新增报销 : Form
     {
+        bool add_image = false;
         String userID;
-        String conStr = @"Server=.\SQLEXPRESS;
+        String conStr = @"Server=.\sqlexpress;
             Database=account;integrated security=true";
         SqlConnection conn;
         报销总页面 f;
         List<string> Project_ID_list = new List<string>();
         List<string> Category_ID_list = new List<string>();
+        Byte[] imageByte=null;
         public 新增报销(String UserID, 报销总页面 form1)
         {
             f = form1;
@@ -65,9 +68,35 @@ namespace expense_app
             int Project_index = comboBox1.SelectedIndex;
             int Category_index = comboBox2.SelectedIndex;
             DateTime currentTime = DateTime.Now;
-            String sql1 = "Exec SubmitExpense "+Project_ID_list[Project_index]+",'"+userID+"',"+Category_ID_list[Category_index]+","+textBox1.Text+",'"+currentTime .ToString()+"','"+textBox2.Text+"'";
-            Debug.WriteLine(sql1);
-            SqlCommand cmd = new SqlCommand(sql1, conn);
+            
+            SqlCommand cmd;
+            if (add_image)
+            {
+                String sql1 = "Exec SubmitExpense @ProjectID,@UserID,@CategoryID,@Amount,@SubmitTime,@Note,@Image";
+                cmd = new SqlCommand(sql1, conn);
+                cmd.Parameters.Add("@Image", SqlDbType.VarBinary, 1000000).Value = imageByte;
+            }
+            else {
+                String sql1 = "Exec SubmitExpense @ProjectID,@UserID,@CategoryID,@Amount,@SubmitTime,@Note,@Image";
+                cmd = new SqlCommand(sql1, conn);
+                cmd.Parameters.Add("@Image", SqlDbType.VarBinary, 1000000).Value = DBNull.Value;
+            }
+            cmd.Parameters.Add("@ProjectID",SqlDbType.Int);
+            cmd.Parameters.Add("@UserID",SqlDbType.VarChar,50);
+            cmd.Parameters.Add("@CategoryID",SqlDbType.Int);
+            cmd.Parameters.Add("@Amount",SqlDbType.Decimal);
+            cmd.Parameters.Add("@SubmitTime",SqlDbType.DateTime);
+            cmd.Parameters.Add("@Note",SqlDbType.Text);
+      
+            cmd.Parameters["@ProjectID"].Value=Project_ID_list[Project_index];
+            cmd.Parameters["@UserID"].Value=userID;
+            cmd.Parameters["@CategoryID"].Value=Category_ID_list[Category_index];
+            cmd.Parameters["@Amount"].Value=textBox1.Text;
+            cmd.Parameters["@SubmitTime"].Value=currentTime;
+            cmd.Parameters["@Note"].Value=textBox2.Text;
+        
+            //Debug.WriteLine(sql1);
+           
             try
             {
                 cmd.ExecuteNonQuery();
@@ -81,6 +110,22 @@ namespace expense_app
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                String fname = openFileDialog1.FileName;
+                FileStream fs = new FileStream(fname,FileMode.Open,FileAccess.Read);
+                BinaryReader br=new BinaryReader(fs);
+                imageByte=br.ReadBytes((int)fs.Length);
+                label4.Text = "√";
+                add_image = true;
+            }
+        }
 
+        private void process1_Exited(object sender, EventArgs e)
+        {
+
+        }
 }
 }

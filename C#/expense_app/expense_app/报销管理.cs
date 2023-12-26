@@ -14,7 +14,7 @@ namespace expense_app
 {
     public partial class 报销管理 : Form
     {
-        String conStr = @"Server=.\SQLEXPRESS;
+        String conStr = @"Server=.\sqlexpress;
             Database=account;integrated security=true";
         SqlConnection conn;
         public 报销管理()
@@ -33,7 +33,7 @@ namespace expense_app
 
         private void 管理_Load(object sender, EventArgs e)
         {
-            string sql1 = "EXEC get_all_expense";
+            string sql1 = "select * from view_all_expense";
             SqlDataAdapter adapter = new SqlDataAdapter(sql1, conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds);

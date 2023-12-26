@@ -41,13 +41,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(861, 466);
             this.dataGridView1.TabIndex = 3;
             // 
-            // 管理
+            // 报销管理
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 708);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "管理";
+            this.Name = "报销管理";
             this.Text = "报销管理";
             this.Load += new System.EventHandler(this.管理_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

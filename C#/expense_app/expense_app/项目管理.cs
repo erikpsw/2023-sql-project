@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using expense_app;
 
 namespace expense_app
 {
     public partial class 项目管理 : Form
     {
         String userID;
-        String conStr = @"Server=.\SQLEXPRESS;
+        String conStr = @"Server=.\sqlexpress;
             Database=account;integrated security=true";
         SqlConnection conn;
         List<string> ID_list = new List<string>();
@@ -40,9 +41,9 @@ namespace expense_app
 
         private void 项目管理_Load(object sender, EventArgs e)
         {
+            conn.Open();
             String sql1 = "select projectID,projectName from Projects";
             SqlCommand cmd = new SqlCommand(sql1, conn);
-            conn.Open();
             SqlDataReader rd = cmd.ExecuteReader();
 
             while (rd.Read())
@@ -66,6 +67,7 @@ namespace expense_app
             textBox1.Text = rd[1].ToString();
             textBox2.Text = rd[0].ToString();
             rd.Close();
+
             sql1 = "EXEC get_Project_expense " + ID_list[index]; ;
             SqlDataAdapter adapter = new SqlDataAdapter(sql1, conn);
             DataSet ds = new DataSet();
@@ -93,12 +95,15 @@ namespace expense_app
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql = @"EXEC UpdateExpenseStatus @ExpenseID";
+            string sql = "EXEC UpdateExpenseStatus @ExpenseID,@ApproverID,@NewStatus";
             SqlCommand cmd = new SqlCommand(sql, conn);
             DateTime currentTime = DateTime.Now;
             cmd.Parameters.Add("@ExpenseID", SqlDbType.Int);
-
+            cmd.Parameters.Add("@NewStatus", SqlDbType.VarChar, 50);
+            cmd.Parameters.Add("@ApproverID", SqlDbType.VarChar, 50);
             cmd.Parameters["@ExpenseID"].Value = comboBox2.Text;
+            cmd.Parameters["@NewStatus"].Value = "Approved";
+            cmd.Parameters["@ApproverID"].Value = userID;
             try
             {
                 conn.Open();
@@ -117,17 +122,15 @@ namespace expense_app
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = @"EXEC UpdateExpenseStatus";
+            string sql = @"EXEC UpdateExpenseStatus @ExpenseID,@NewStatus,@ApproverID";
             SqlCommand cmd = new SqlCommand(sql, conn);
             DateTime currentTime = DateTime.Now;
             cmd.Parameters.Add("@ExpenseID", SqlDbType.Int);
             cmd.Parameters.Add("@NewStatus", SqlDbType.VarChar, 50);
             cmd.Parameters.Add("@ApproverID", SqlDbType.VarChar, 50);
-            cmd.Parameters.Add("@ApprovalTime", SqlDbType.Date);
             cmd.Parameters["@ExpenseID"].Value = comboBox2.Text;
             cmd.Parameters["@NewStatus"].Value = "Disapproved";
             cmd.Parameters["@ApproverID"].Value = userID;
-            cmd.Parameters["@ApprovalTime"].Value = currentTime.Date.ToString();
             try
             {
                 conn.Open();
@@ -189,6 +192,40 @@ namespace expense_app
                 conn.Close();
             }
         
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.Text == "")
+            {
+                MessageBox.Show("请选择报销ID");
+            }
+            else {
+                String sql = "select image from Expenses where ExpenseID=" + comboBox2.Text;
+                Debug.WriteLine(sql);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                byte[] imagebyte;
+                object result = cmd.ExecuteScalar();
+                if (result != null && result != DBNull.Value)
+                {
+                    imagebyte = (byte[])result;
+                    Form imagef = new 附件查看(imagebyte);
+                    imagef.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("未上传附件");
+                }
+               
+                conn.Close();
+            }
+       
         }
     }
 }

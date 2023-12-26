@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>expense_app</RootNamespace>
     <AssemblyName>expense_app</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="修改报销.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="修改报销.Designer.cs">
+      <DependentUpon>修改报销.cs</DependentUpon>
+    </Compile>
+    <Compile Include="忘记密码.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="忘记密码.Designer.cs">
+      <DependentUpon>忘记密码.cs</DependentUpon>
+    </Compile>
     <Compile Include="报销总页面.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +68,12 @@
     </Compile>
     <Compile Include="新增报销.Designer.cs">
       <DependentUpon>新增报销.cs</DependentUpon>
+    </Compile>
+    <Compile Include="注册.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="注册.Designer.cs">
+      <DependentUpon>注册.cs</DependentUpon>
     </Compile>
     <Compile Include="登陆.cs">
       <SubType>Form</SubType>
@@ -76,17 +95,44 @@
     <Compile Include="报销管理.Designer.cs">
       <DependentUpon>报销管理.cs</DependentUpon>
     </Compile>
+    <Compile Include="费用数据分析.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="费用数据分析.Designer.cs">
+      <DependentUpon>费用数据分析.cs</DependentUpon>
+    </Compile>
+    <Compile Include="附件查看.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="附件查看.Designer.cs">
+      <DependentUpon>附件查看.cs</DependentUpon>
+    </Compile>
+    <Compile Include="项目数据分析.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="项目数据分析.Designer.cs">
+      <DependentUpon>项目数据分析.cs</DependentUpon>
+    </Compile>
     <Compile Include="项目管理.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="项目管理.Designer.cs">
       <DependentUpon>项目管理.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="修改报销.resx">
+      <DependentUpon>修改报销.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="忘记密码.resx">
+      <DependentUpon>忘记密码.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="报销总页面.resx">
       <DependentUpon>报销总页面.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="新增报销.resx">
       <DependentUpon>新增报销.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="注册.resx">
+      <DependentUpon>注册.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="登陆.resx">
       <DependentUpon>登陆.cs</DependentUpon>
@@ -102,9 +148,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="报销管理.resx">
       <DependentUpon>报销管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="费用数据分析.resx">
+      <DependentUpon>费用数据分析.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="附件查看.resx">
+      <DependentUpon>附件查看.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="项目数据分析.resx">
+      <DependentUpon>项目数据分析.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="项目管理.resx">
       <DependentUpon>项目管理.cs</DependentUpon>

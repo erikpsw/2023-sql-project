@@ -34,6 +34,8 @@
             this.管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.项目管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.根据费用种类ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.根据项目分类ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -87,9 +89,26 @@
             // 
             // 数据分析ToolStripMenuItem
             // 
+            this.数据分析ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.根据费用种类ToolStripMenuItem,
+            this.根据项目分类ToolStripMenuItem});
             this.数据分析ToolStripMenuItem.Name = "数据分析ToolStripMenuItem";
             this.数据分析ToolStripMenuItem.Size = new System.Drawing.Size(94, 28);
             this.数据分析ToolStripMenuItem.Text = "数据分析";
+            // 
+            // 根据费用种类ToolStripMenuItem
+            // 
+            this.根据费用种类ToolStripMenuItem.Name = "根据费用种类ToolStripMenuItem";
+            this.根据费用种类ToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.根据费用种类ToolStripMenuItem.Text = "根据费用种类";
+            this.根据费用种类ToolStripMenuItem.Click += new System.EventHandler(this.根据费用种类ToolStripMenuItem_Click);
+            // 
+            // 根据项目分类ToolStripMenuItem
+            // 
+            this.根据项目分类ToolStripMenuItem.Name = "根据项目分类ToolStripMenuItem";
+            this.根据项目分类ToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.根据项目分类ToolStripMenuItem.Text = "根据项目分类";
+            this.根据项目分类ToolStripMenuItem.Click += new System.EventHandler(this.根据项目分类ToolStripMenuItem_Click);
             // 
             // 管理总页面
             // 
@@ -119,5 +138,7 @@
         private System.Windows.Forms.ToolStripMenuItem 管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 项目管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据分析ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 根据费用种类ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 根据项目分类ToolStripMenuItem;
     }
 }

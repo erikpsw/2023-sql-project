@@ -44,6 +44,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -57,6 +58,7 @@
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.Size = new System.Drawing.Size(1289, 419);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // comboBox1
             // 
@@ -106,51 +108,52 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(146, 609);
+            this.groupBox1.Location = new System.Drawing.Point(73, 609);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(700, 131);
+            this.groupBox1.Size = new System.Drawing.Size(773, 151);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "审批";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(515, 58);
+            this.button3.Location = new System.Drawing.Point(626, 58);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(157, 24);
+            this.button3.Size = new System.Drawing.Size(128, 44);
             this.button3.TabIndex = 4;
-            this.button3.Text = "Update data";
+            this.button3.Text = "更新数据";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(368, 59);
+            this.button2.Location = new System.Drawing.Point(480, 58);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 23);
+            this.button2.Size = new System.Drawing.Size(127, 43);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Disapproved";
+            this.button2.Text = "拒绝";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(219, 58);
+            this.button1.Location = new System.Drawing.Point(334, 58);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 26);
+            this.button1.Size = new System.Drawing.Size(117, 44);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Approved";
+            this.button1.Text = "同意";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(41, 58);
+            this.comboBox2.Location = new System.Drawing.Point(27, 68);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(124, 26);
             this.comboBox2.TabIndex = 1;
@@ -158,7 +161,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(62, 24);
+            this.label3.Location = new System.Drawing.Point(39, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 18);
             this.label3.TabIndex = 0;
@@ -204,6 +207,16 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "ExpenseID";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(193, 60);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(117, 44);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "查看附件";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // 项目管理
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -248,5 +261,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -16,7 +16,7 @@ namespace expense_app
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new 登陆());
+            Application.Run(new 登录());
         }
     }
 }

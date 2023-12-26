@@ -8,7 +8,6 @@ C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.exe
 C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.pdb
 C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.报销管理.resources
 C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.项目管理.resources
-C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.登陆.resources
 C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.管理总页面.resources
 C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.报销总页面.resources
 C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.新增报销.resources
@@ -27,3 +26,44 @@ C:\Users\Osscarrrrr\Desktop\2023-sql-project-main\C#\expense_app\expense_app\obj
 C:\Users\Osscarrrrr\Desktop\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.csproj.CoreCompileInputs.cache
 C:\Users\Osscarrrrr\Desktop\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.exe
 C:\Users\Osscarrrrr\Desktop\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.pdb
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\bin\Debug\expense_app.exe.config
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.exe
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.pdb
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\bin\Debug\expense_app.exe
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\bin\Debug\expense_app.pdb
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.csprojResolveAssemblyReference.cache
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.报销总页面.resources
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.新增报销.resources
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.管理总页面.resources
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.Properties.Resources.resources
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.报销管理.resources
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.项目管理.resources
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.csproj.GenerateResource.Cache
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.注册.resources
+D:\学习\计算机\数据库\big homework\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.登录.resources
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\bin\Debug\expense_app.exe.config
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\bin\Debug\expense_app.exe
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\bin\Debug\expense_app.pdb
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.csprojAssemblyReference.cache
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.报销总页面.resources
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.新增报销.resources
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.注册.resources
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.登录.resources
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.管理总页面.resources
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.Properties.Resources.resources
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.报销管理.resources
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.项目管理.resources
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.csproj.GenerateResource.cache
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.csproj.CoreCompileInputs.cache
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.exe
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.pdb
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.忘记密码.resources
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.项目数据分析.resources
+C:\Users\Osscarrrrr\Desktop\新建文件夹\2023-sql-project-main (1)\2023-sql-project-main\2023-sql-project-main\C#\expense_app\expense_app\obj\Debug\expense_app.费用数据分析.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.忘记密码.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.注册.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.登录.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.费用数据分析.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.项目数据分析.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.附件查看.resources
+C:\programing\sql\project\C#\expense_app\expense_app\obj\Debug\expense_app.修改报销.resources
